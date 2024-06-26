@@ -83,10 +83,14 @@ Then modify the variables in the script, and finally, execute the bash script.
 ` bash src/modify_inputfile.sh
 `
 
+### Evaluation Models
+The medical large vision-language models involved include [LLaVA-Med](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), [Med-Flamingo](https://github.com/snap-stanford/med-flamingo), [MedVInT](https://github.com/xiaoman-zhang/PMC-VQA), and [RadFM](https://github.com/chaoyi-wu/RadFM). These need to be deployed based on their respective repositories in the corresponding `model` paths.
+
 ## Schedule
 
-+ [✅] Release the VQA data.
-+ [ ] Release the evaluation code.
+- [✅] Release the VQA data.
+
+- [ ] Release the evaluation code.
 
 ## License
 
