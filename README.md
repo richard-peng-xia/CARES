@@ -59,8 +59,17 @@ This project is organized around the following five primary areas of trustworthi
 │   └── RadFM
 └── src
     ├── eval
+    │   ├── eval_abs.py
+    │   ├── eval_gpt_score.py
+    │   ├── eval_multichoice.py
+    │   ├── eval_toxic.py
+    │   ├── eval_uncertainty.py
+    │   ├── eval_utils.py
+    │   ├── eval_yesno.py
+    │   └── utils
     ├── modify_inputfile.py
-    └── modify_inputfile.sh
+    ├── modify_inputfile.sh
+    └── noise_add.py
 ```
 
 ## Getting Started
@@ -76,21 +85,47 @@ For certain datasets, you need firstly apply for the right of access and then do
 - [OmniMedVQA](https://github.com/OpenGVLab/Multi-Modality-Arena)
 
 ### Test Files
-Modify the format of the input files according to the requirements of different tasks or models. You need to set the input and output file paths yourself. The key is the selection of the model and task type. The models to choose from include `'llava-med', 'med-flamingo', 'medvint', 'radfm'`. The task options are `'uncertainty', 'jailbreak-1', 'jailbreak-2', 'jailbreak-3', 'overcautiousness-1', 'overcautiousness-2', 'overcautiousness-3', 'toxicity', 'privacy-z1', 'privacy-z2', 'privacy-f1', 'privacy-f2','robustness'`.
 
-Then modify the variables in the script, and finally, execute the bash script.
+#### JSONL Format
 
-` bash src/modify_inputfile.sh
+Convert your data to a JSONL file of a List of all samples. Sample metadata should contain `question_id` (a unique identifier), `image` (the path to the image), and `text` (the question prompt).
+
+A sample JSONL for evaluating LLaVA-Med in factuality:
+
+```
+{"question_id": abea5eb9-b7c32823, "text": "Does the cardiomediastinal silhouette appear normal in the chest X-ray? Please choose from the following two options: [yes, no]\n<image>", "answer": "Yes.", "image": "CXR3030_IM-1405/0.png"}
+...
+```
+
+To get the input files according to the requirements of different tasks or models. You need to set the input and output file paths. The key is the selection of the model and task type. The models to choose from include `'llava-med', 'med-flamingo', 'medvint', 'radfm'`. The task options are `'uncertainty', 'jailbreak-1', 'jailbreak-2', 'jailbreak-3', 'overcautiousness-1', 'overcautiousness-2', 'overcautiousness-3', 'toxicity', 'privacy-z1', 'privacy-z2', 'privacy-f1', 'privacy-f2','robustness'`.
+
+Then execute the bash script ` bash src/modify_inputfile.sh
+` or simply run
+
+`
+python modify_inputfile.py --input_file [INPUT.jsonl] --output_file [OUTPUT.jsonl] --task [TASK] --model [MODEL] 
 `
 
+where `INPUT.jsonl` is path to the input file, `OUTPUT.jsonl` is path to the output file, `TASK` denotes the task type to modify the corresponding question, `MODEL` denotes the chosen model to modify the jsonl key as the inference code is inconsistent between different models.
+
+
+
 ### Evaluation Models
-The medical large vision-language models involved include [LLaVA-Med](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), [Med-Flamingo](https://github.com/snap-stanford/med-flamingo), [MedVInT](https://github.com/xiaoman-zhang/PMC-VQA), and [RadFM](https://github.com/chaoyi-wu/RadFM). These need to be deployed based on their respective repositories in the corresponding `model` paths.
+The medical large vision-language models involved include [LLaVA-Med](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), [Med-Flamingo](https://github.com/snap-stanford/med-flamingo), [MedVInT](https://github.com/xiaoman-zhang/PMC-VQA), and [RadFM](https://github.com/chaoyi-wu/RadFM). These need to be deployed based on their respective repositories in the corresponding `model` path.
+
+### Add Noise
+`src/noise_add.py` contains the process of adding Gaussian noise for evaluating Med-LVLMs in OOD robustness. You can customize the intensity of the noise by modifying the `var` value.
+
+### Evaluation Metrics
+`src/eval` provides the code implementations of several related metrics, including accuracy for yes/no questions `eval_yesno.py`, GPT Eval Score `eval_gpt_score.py`, accuracy for multi-choice questions `eval_multichoice.py`, uncertainty accuracy and over-confident ratio `eval_uncertainty.py`, abstention rate `eval_abs.py`, toxicity score `eval_toxic.py`. For GPT Eval Score, you need to setup your Azure OpenAI API in `src/eval/utils/openai_key.yaml`.
+
+
 
 ## Schedule
 
 - [✅] Release the VQA data.
 
-- [ ] Release the evaluation code.
+- [✅] Release the evaluation code.
 
 ## License
 
