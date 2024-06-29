@@ -6,6 +6,12 @@
 <img src=asset/overview.png width=100% />
 </div>
 
+## News
+- [06/28/2024] The dataset and evaluation toolkit are released!
+- [06/27/2024] The [project page](https://cares-ai.github.io/) is released, including the leaderboard.
+- [06/10/2024] The manuscript can be found on [arXiv](https://arxiv.org/abs/2406.06007).
+
+
 ## Overview
 This repo contains the source code of CARES. This study aims to assist researchers in gaining a better understanding of the reliable capabilities, limitations, and potential risks associated with deploying these advanced Medical Large Vision Language Models (Med-LVLMs). For further details, please refer to our paper.
 
@@ -117,7 +123,16 @@ The medical large vision-language models involved include [LLaVA-Med](https://gi
 `src/noise_add.py` contains the process of adding Gaussian noise for evaluating Med-LVLMs in OOD robustness. You can customize the intensity of the noise by modifying the `var` value.
 
 ### Evaluation Metrics
-`src/eval` provides the code implementations of several related metrics, including accuracy for yes/no questions `eval_yesno.py`, GPT Eval Score `eval_gpt_score.py`, accuracy for multi-choice questions `eval_multichoice.py`, uncertainty accuracy and over-confident ratio `eval_uncertainty.py`, abstention rate `eval_abs.py`, toxicity score `eval_toxic.py`. For GPT Eval Score, you need to setup your Azure OpenAI API in `src/eval/utils/openai_key.yaml`.
+`src/eval` provides the code implementations of several related metrics, including 
+
+- accuracy for yes/no questions: `eval_yesno.py`
+- GPT Eval Score: `eval_gpt_score.py`
+- accuracy for multi-choice questions: `eval_multichoice.py`
+- uncertainty accuracy and over-confident ratio: `eval_uncertainty.py`
+- abstention rate: `eval_abs.py`
+- toxicity score: `eval_toxic.py`. 
+
+For GPT Eval Score, you need to setup your Azure OpenAI API in `src/eval/utils/openai_key.yaml`.
 
 
 
@@ -141,3 +156,6 @@ This project is licensed under the CC BY 4.0 - see the LICENSE file for details.
   year={2024}
 }
 ```
+
+## Acknowledgement
+We use code from [LLaVA-Med](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), [LLaVA](https://github.com/haotian-liu/LLaVA), [PMC-VQA](https://github.com/xiaoman-zhang/PMC-VQA), and [DecodingTrust](https://github.com/AI-secure/DecodingTrust). We thank the authors for releasing their code.
