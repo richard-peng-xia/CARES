@@ -7,6 +7,7 @@
 </div>
 
 ## News
+- [07/03/2024] The short version was accepted by ICML 2024 Workshop on [Foundation Models in the Wild](https://icml-fm-wild.github.io/).
 - [06/28/2024] The dataset and evaluation toolkit are released!
 - [06/27/2024] The [project page](https://cares-ai.github.io/) is released, including the leaderboard.
 - [06/10/2024] The manuscript can be found on [arXiv](https://arxiv.org/abs/2406.06007).
