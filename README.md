@@ -158,5 +158,5 @@ This project is licensed under the CC BY 4.0 - see the LICENSE file for details.
 }
 ```
 
-## Acknowledgement
+## 🙏Acknowledgement
 We use code from [LLaVA-Med](https://github.com/microsoft/LLaVA-Med/tree/v1.0.0), [LLaVA](https://github.com/haotian-liu/LLaVA), [PMC-VQA](https://github.com/xiaoman-zhang/PMC-VQA), and [DecodingTrust](https://github.com/AI-secure/DecodingTrust). We thank the authors for releasing their code.
