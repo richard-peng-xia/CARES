@@ -6,14 +6,14 @@
 <img src=asset/overview.png width=100% />
 </div>
 
-## News
+## 🚀News
 - [07/03/2024] The short version was accepted by ICML 2024 Workshop on [Foundation Models in the Wild](https://icml-fm-wild.github.io/).
 - [06/28/2024] The dataset and evaluation toolkit are released!
 - [06/27/2024] The [project page](https://cares-ai.github.io/) is released, including the leaderboard.
 - [06/10/2024] The manuscript can be found on [arXiv](https://arxiv.org/abs/2406.06007).
 
 
-## Overview
+## 🌟Overview
 This repo contains the source code of CARES. This study aims to assist researchers in gaining a better understanding of the reliable capabilities, limitations, and potential risks associated with deploying these advanced Medical Large Vision Language Models (Med-LVLMs). For further details, please refer to our paper.
 
 *Peng Xia, Ze Chen, Juanxi Tian, Yangrui Gong, Ruibo Hou, Yue Xu, Zhenbang Wu, Zhiyuan Fan, Yiyang Zhou, Kangyu Zhu, Wenhao Zheng, Zhaoyang Wang, Xiao Wang, Xuchao Zhang, Chetan Bansal, Marc Niethammer, Junzhou Huang, Hongtu Zhu, Yun Li, Jimeng Sun, Zongyuan Ge, Gang Li, James Zou, Huaxiu Yao.*
@@ -30,7 +30,7 @@ This project is organized around the following five primary areas of trustworthi
 
 5. Robustness
 
-## Project Structure
+## 📚Project Structure
 ```
 .
 ├── LICENSE
@@ -79,7 +79,7 @@ This project is organized around the following five primary areas of trustworthi
     └── noise_add.py
 ```
 
-## Getting Started
+## 📦Getting Started
 ### Data Source
 For certain datasets, you need firstly apply for the right of access and then download the dataset.
 
@@ -137,17 +137,17 @@ For GPT Eval Score, you need to setup your Azure OpenAI API in `src/eval/utils/o
 
 
 
-## Schedule
+## 📅Schedule
 
-- [✅] Release the VQA data.
+- [x] Release the VQA data.
 
-- [✅] Release the evaluation code.
+- [x] Release the evaluation code.
 
-## License
+## 📧License
 
 This project is licensed under the CC BY 4.0 - see the LICENSE file for details.
 
-## Citation
+## 📝Citation
 
 ```bibtex
 @article{xia2024cares,
