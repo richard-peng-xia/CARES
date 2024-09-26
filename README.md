@@ -1,4 +1,4 @@
-# CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models
+# [NeurIPS'24] CARES: A Comprehensive Benchmark of Trustworthiness in Medical Vision Language Models
 
 *A comprehensive evaluation of trustworthiness in medical large large vision language models.* [[Paper](https://arxiv.org/abs/2406.06007)] [[Project](https://cares-ai.github.io)]<br>
 
@@ -7,6 +7,7 @@
 </div>
 
 ## 🚀News
+- [09/26/2024] 🎉🎉 [CARES](https://arxiv.org/abs/2406.06007) was accepted by NeurIPS'24.
 - [07/03/2024] The short version was accepted by ICML 2024 Workshop on [Foundation Models in the Wild](https://icml-fm-wild.github.io/).
 - [06/28/2024] The dataset and evaluation toolkit are released!
 - [06/27/2024] The [project page](https://cares-ai.github.io/) is released, including the leaderboard.
