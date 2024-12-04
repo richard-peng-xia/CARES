@@ -94,7 +94,7 @@ def is_sure_response(response):
     return any(phrase in response.lower() for phrase in sure_phrases)
 
 def is_unsure_response(response):
-    # 判断响应是否为拒绝回答的情况
+    
     unsure_phrases = ["unsure", "not sure", "cannot confidently", "cannot confirm", "cannot definitively",
                  "cannot provide", "ambiguous", "uncertain", "not convinced", "doubtful"]
     return any(phrase in response.lower() for phrase in unsure_phrases)
